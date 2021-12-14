@@ -2,9 +2,9 @@
 using Microsoft.Extensions.Hosting;
 
 using WormsWorld.Mover;
-using WormsWorld.FileWriter;
-using WormsWorld.FoodGenerator;
-using WormsWorld.NameGenerator;
+using WormsWorld.Writer;
+using WormsWorld.Generator.Food;
+using WormsWorld.Generator.Name;
 using WormsWorld.WorldSimulator;
 
 namespace WormsWorld
@@ -22,9 +22,9 @@ namespace WormsWorld
                 .ConfigureServices((_, services) =>
                 {
                     services.AddHostedService<WorldService>();
-                    services.AddSingleton<IFoodGenerator, FoodGenerator.FoodGenerator>();
-                    services.AddSingleton<IFileWriter>(_ => new FileWriter.FileWriter("AboutWorms.txt"));
-                    services.AddSingleton<INameGenerator, NameGenerator.NameGenerator>();
+                    services.AddSingleton<IFoodGenerator, FoodGenerator>();
+                    services.AddSingleton<IFileWriter>(_ => new FileWriter("AboutWorms.txt"));
+                    services.AddSingleton<INameGenerator, NameGenerator>();
                     services.AddSingleton<IWormMover, WormMover>();
                 });
         }

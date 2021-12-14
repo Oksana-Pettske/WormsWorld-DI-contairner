@@ -9,9 +9,9 @@ using Microsoft.Extensions.Hosting;
 using WormsWorld.Enum;
 using WormsWorld.Mover;
 using WormsWorld.Entity;
-using WormsWorld.FileWriter;
-using WormsWorld.FoodGenerator;
-using WormsWorld.NameGenerator;
+using WormsWorld.Writer;
+using WormsWorld.Generator.Food;
+using WormsWorld.Generator.Name;
 
 namespace WormsWorld.WorldSimulator
 {
